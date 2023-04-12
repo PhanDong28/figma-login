@@ -17,7 +17,7 @@ function Todos({ todos }: Props): JSX.Element {
               {todo.value}
             </div>
           </div>
-          <i className="bx bx-trash text-[30px] cursor-pointer invisible group-hover:visible"></i>
+          <i className="bx bx-x text-[30px] cursor-pointer invisible group-hover:visible float-right"></i>
         </li>
       ))}
     </ul>
