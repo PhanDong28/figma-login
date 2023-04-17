@@ -1,21 +1,13 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
 
-// interface Props {
-//     isAuthentication: boolean;
-// }
 
 
 function app(): JSX.Element {
-
-    // if (!isAuthentication) {
-    //     return <Navigate to="/login" replace={true} />
-    //   }
-    
-
-
+  const handleLogin = () => {
+    window.location.href = '/login';
+  };
   return (
-    <div className="app">
+    <div className="app bg-[#141416]">
       <header>
         <div
           id="header"
@@ -56,8 +48,8 @@ function app(): JSX.Element {
             </div>
             </div>
             <div className="buttons flex flex-row justify-center align-center p-[0px] gap-[12px] order-2 w-[229px] h-[40px]">
-                <button className="login bg-[#3772FF] flex flex-row justify-center align-center py-[9px] px-[16px] w-[90px] h-[40px] rounded-[40px] order-0">
-                <Link to={'/login'} className="w-[48px] h-[16px] font-['Open_Sans'] align-center text-[#FCFCFD] order-0 cursor-pointer">Login</Link>
+                <button onClick={handleLogin} className="login bg-[#3772FF] flex flex-row justify-center align-center py-[9px] px-[16px] w-[90px] h-[40px] rounded-[40px] order-0">
+                <span className="w-[48px] h-[16px] font-['Open_Sans'] align-center text-[#FCFCFD] order-0 cursor-pointer">Login</span>
                 </button>
             </div>
           </div>

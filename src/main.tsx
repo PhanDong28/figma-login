@@ -16,10 +16,8 @@ const AppRender = (): JSX.Element => {
       element: <App/>
     },
     {
-      path: '/',
-      element: <Homepage isAuthentication={isAuthentication} onLogout={() => {
-        setIsAuthentication(false)
-      }} />
+      path: '/homepage',
+      element: <Homepage/>
     },
     {
       path: '/login',
@@ -28,7 +26,7 @@ const AppRender = (): JSX.Element => {
   ])
 
   return (
-    <div className="bg-[#f5f5f5] py-0 px-[10%]">
+    <div className=" py-0 px-[10%]">
       <RouterProvider router={router} />
     </div>
   )

@@ -1,15 +1,17 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+
+
 
 interface Props {
     isAuthentication: boolean;
-    onLogout: () => void
+
 }
 
-function homepage({ onLogout}:Props): JSX.Element {
-  //       if (!isAuthentication) {
-  //           return <Navigate to ='/'></Navigate>
-  //       }
+function homepage(): JSX.Element {
+  const handleLogout = () => {
+    window.location.href = '/';
+  };
+
   return (
     <div className="homepage">
       <header>
@@ -52,8 +54,8 @@ function homepage({ onLogout}:Props): JSX.Element {
             </div>
             </div>
             <div className="buttons flex flex-row justify-center align-center p-[0px] gap-[12px] order-2 w-[229px] h-[40px]">
-                <button onClick={onLogout} className="login bg-[#3772FF] flex flex-row justify-center align-center py-[9px] px-[16px] w-[90px] h-[40px] rounded-[40px] order-0">
-                <Link to={'/'} className="w-[48px] h-[16px] font-['Open_Sans'] align-center text-[#FCFCFD] order-0 cursor-pointer">Logout</Link>
+                <button onClick={handleLogout} className="login bg-[#3772FF] flex flex-row justify-center align-center py-[9px] px-[16px] w-[90px] h-[40px] rounded-[40px] order-0">
+                <span className="w-[48px] h-[16px] font-['Open_Sans'] align-center text-[#FCFCFD] order-0 cursor-pointer">Logout</span>
                 </button>
             </div>
             <div className="order-2">

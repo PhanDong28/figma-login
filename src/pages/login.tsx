@@ -1,23 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUserData, loginFunc } from '../api/login';
+
 
 interface Props {
   onSuccess: () => void;
 }
 
+interface User {
+  username: string;
+  password: string;
+}
+
+const LOGIN_API_URL = 'https://6411e02cf9fe8122ae168796.mockapi.io';
+
 function Login({ onSuccess }: Props): JSX.Element {
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const [userData, setUserData] = useState<any>(null);
-  
+  const [userData, setUserData] = useState<User[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserData(checkLogin);
-      setUserData(data);
+      try {
+        const res = await fetch(`${LOGIN_API_URL}/login`);
+        const data = await res.json();
+        setUserData(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
-
+  
     fetchData();
   }, []);
 
@@ -29,18 +40,16 @@ function Login({ onSuccess }: Props): JSX.Element {
     if (isLoginSuccess) {
       onSuccess();
       navigate('/homepage');
+      localStorage.setItem('isLoginSuccess', 'true')
     } else {
       setError('Incorrect username or password.');
     }
   };
 
-  const checkLogin: loginFunc = (username, password) => {
-    if (userData && userData.username === username && userData.password === password) {
-      return true;
-    }
-    return false;
+  const checkLogin = (username: string, password: string): boolean => {
+    return userData.some((user) => user.username === username && user.password === password);
   };
-
+  
   return (
     <div>
       <div className="header w-[400px] h-[300px] bg-aliceblue border border-solid border-gray-400 box-border rounded-3xl shadow-lg align-center justify-center mx-auto my-[10%] p-[20px] flex flex-col p-y-[50px]">
