@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import bigc from '../assest/images/bigc.png'
+import Logo from '../components/Logo';
+import Frame from '../components/Frame';
+import Moreselect from '../components/Moreselect';
+
 
 
 interface Props {
@@ -51,21 +56,22 @@ function Login({ onSuccess }: Props): JSX.Element {
   };
   
   return (
-    <div>
-      <div className="header w-[400px] h-[300px] bg-aliceblue border border-solid border-gray-400 box-border rounded-3xl shadow-lg align-center justify-center mx-auto my-[10%] p-[20px] flex flex-col p-y-[50px]">
-        <h1 className="theader text-center text-lg md:text-2xl font-bold text-blue-500 mb-8 align-center justify-center">Login</h1>
-        <form onSubmit={handleLogin} className="flex flex-col">
-          <label htmlFor="username" className="mb-6 ">
-            <input className="username h-10 w-[350px] bg-white border border-gray-300 p-2 mb-4 rounded-lg focus:bg-blue-100 hover:bg-blue-100" type="text" placeholder="Username" name="username" />
-          </label>
-          <label htmlFor="password" className="mb-6">
-            <input className="password h-10 w-[350px] bg-white border border-gray-300 p-2 mb-4 rounded-lg focus:bg-blue-100 hover:bg-blue-100" type="password" placeholder="Password" name="password" />
-          </label>
-          {error && <div className="text-red-700">{error}</div>}
-          <button className="justify-center items-center bg-blue-500 mx-auto w-[100px] h-[40px] p-[10px] rounded-[8px] font-['Open_Sans']" type="submit">
-            Login
-          </button>
-        </form>
+    <div className='login w-full flex h-screen bg-[#FFFFFF] relative'> 
+      <div className='form w-2/3 justify-center items-flex-start flex flex-col gap-10'>
+        <div className='justify-center items-flex-start flex flex-col gap-10 w-[436px] h-[602px] m-auto'>
+        <Logo/>
+        <div className="content flex flex-col justify-center items-center p-0 gap-1 order-0">
+          <form action="Sign in form">
+          <Frame />
+          </form>
+          <div>
+            <Moreselect />
+          </div>
+            </div>
+          </div>
+        </div>
+      <div className='w-1/3 h-full '> 
+        <img src={bigc} className='h-full '/>
       </div>
     </div>
   );

@@ -4,29 +4,27 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './pages/login'
 import { useState } from 'react'
 import React from 'react'
-import Homepage from './pages/homepage'
-import App from './pages/app'
+import Register from './pages/register'
+
 
 const AppRender = (): JSX.Element => {
   const [isAuthentication, setIsAuthentication] = useState(localStorage.getItem('isAuthentication') === 'true')
 
   const router = createBrowserRouter([
+
+
     {
       path: '/',
-      element: <App/>
-    },
-    {
-      path: '/homepage',
-      element: <Homepage/>
-    },
-    {
-      path: '/login',
       element: <Login onSuccess={() => { setIsAuthentication(true) }} />
-    }
+    },
+    {
+      path: '/register',
+      element: <Register/>
+    },
   ])
 
   return (
-    <div className=" py-0 px-[10%]">
+    <div className='w-full'>
       <RouterProvider router={router} />
     </div>
   )
