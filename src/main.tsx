@@ -5,6 +5,7 @@ import Login from './pages/login'
 import { useState } from 'react'
 import React from 'react'
 import Register from './pages/register'
+import Forgetpassword from './pages/forgetpassword'
 
 
 const AppRender = (): JSX.Element => {
@@ -20,6 +21,10 @@ const AppRender = (): JSX.Element => {
     {
       path: '/register',
       element: <Register/>
+    },
+    {
+      path: '/forgetpassword',
+      element: <Forgetpassword/>
     },
   ])
 

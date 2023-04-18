@@ -2,6 +2,9 @@ import React from 'react'
 
 
 const Frame1 =():JSX.Element => {
+  const forgetPassword = () => {
+    window.location.href = '/forgetpassword';
+  };
   return (
     <div>
         <div className='Frame flex flex-col justify-center items-center p-0 gap-1 w-49 h-24 order-0'>
@@ -28,7 +31,7 @@ const Frame1 =():JSX.Element => {
                 <input type="checkbox" className="border-box flex flex-row justify-center items-center display-none w-5 h-5"/>
                 <p className="font-serif font-normal text-base leading-7 text-[#8A92A6] order-0 cursor-pointer hover:text-[#b4b9c5]">Remember me?</p>
             </div>
-            <h1 className="forgot font-serif font-normal text-base leading-7 text-[#3A57E8] order-0 cursor-pointer hover:text-[#131c49]">Forgot Password</h1>
+            <h1 onClick={forgetPassword} className="forgot font-serif font-normal text-base leading-7 text-[#3A57E8] order-0 cursor-pointer hover:text-[#131c49]">Forgot Password</h1>
         </div>
       </div>
       <div className="signbutton flex flex-row justify-center items-center py-2 px-6 w-48 h-11 bg-[#3A57E8] rounded-[4px] order-1 cursor-pointer hover:bg-[#4a66f3]">

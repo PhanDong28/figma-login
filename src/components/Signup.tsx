@@ -2,9 +2,7 @@ import React from 'react'
 
 
 const Signup =():JSX.Element=> {
-    const moveToLogin = () => {
-        window.location.href = '/';
-      };
+
   return (
     <div className='Signup'>
         <div className='Frame2 flex flex-col justify-center items-center p-0 gap-1 w-49 h-24 order-0'>
@@ -35,7 +33,7 @@ const Signup =():JSX.Element=> {
                         </label>
                     </div>
                     <div className='flex flex-col items-flex-start gap-2 order-0'>
-                        <p className='font-serif font-normal text-base leading-7 text-[#8A92A6] order-0'>Phone No</p>
+                        <p className='font-serif font-normal text-base leading-7 text-[#8A92A6] order-0'>Phone No.</p>
                         <label htmlFor="phoneno" className="flex flex-col items-start gap-4 order-1 w-60 h-11 ">
                         <input type="text" className="border-solid rounded-md border-[1px] border-box px-4 py-2 gap-56 w-60 h-11 bg-[#FFFF] order-0 border-[#3A57E8] focus:bg-blue-100 hover:bg-blue-100 focus:outline-none" />
                         </label>
@@ -61,7 +59,7 @@ const Signup =():JSX.Element=> {
                     </div>
             </div>
         </div>
-        <div onClick={moveToLogin} className="flex flex-row justify-center items-center py-2 px-6 w-48 h-11 bg-[#3A57E8] rounded-[4px] order-1 cursor-pointer hover:bg-[#4a66f3] m-auto">
+        <div className="flex flex-row justify-center items-center py-2 px-6 w-48 h-11 bg-[#3A57E8] rounded-[4px] order-1 cursor-pointer hover:bg-[#4a66f3] m-auto">
             <p className="font-serif font-normal text-base leading-7 flex items-center text-center text-[#FFFFFF]">Sign up</p>
         </div>
     </div>
