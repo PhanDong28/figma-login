@@ -55,7 +55,7 @@ const Signup =():JSX.Element=> {
                 </div>
                 <div className="remember flex flex-row items-center gap-2 order-0">
                         <input type="checkbox" className="border-box flex flex-row justify-center items-center display-none w-5 h-5"/>
-                         <p className="font-serif font-normal text-base leading-7 text-[#8A92A6] order-0 cursor-pointer hover:text-[#b4b9c5]">I agree with the terms of use</p>
+                         <p className="font-serif font-normal text-base leading-7 text-[#8A92A6] order-0 ">I agree with the terms of use</p>
                     </div>
             </div>
         </div>
