@@ -7,7 +7,8 @@ import Linkedin from '../assest/images/Linkedin.png'
 const Moreselect =():JSX.Element=> {
   const moveToSignup = () => {
     window.location.href = '/register';
-  };
+  };  
+
   return (
     <div className='flex flex-col justify-center items-center gap-4 order-1'>
       <p className='w-56 h-7 font-serif font-normal text-base leading-7 text-[#232D42] order-0'>or sign in with other accounts?</p>

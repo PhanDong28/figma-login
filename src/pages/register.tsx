@@ -1,31 +1,32 @@
-import React from 'react'
-import bigc from '../assest/images/bigc.png'
-import Logo from '../components/Logo'
-import Moreselect2 from '../components/Moreselect2'
-import Signup from '../components/Signup'
+import React from "react";
+import circle from "../assest/images/circle.png";
+import Logo from "../components/Logo";
+import Moreselect2 from "../components/Moreselect2";
+import Signup from "../components/Signup";
+import Logotop from "../assest/images/logotop.png";
 
-const register =():JSX.Element => {
+const Register = (): JSX.Element => {
   return (
-    <div className='w-full h-screen flex flex-row items-start absolute'>
-        <div className='w-1/3 h-full'> 
-        <img src={bigc} className='h-full rotate-180'/>
-            </div>
-        <div className='w-2/3 order-1 justify-center items-flex-start flex flex-col gap-10'>
-            <div className='justify-center items-flex-start flex flex-col gap-10 w-[516px] h-[809px] m-auto'>
-                <div className='Logo'>
-                    <Logo/>
-                </div>
-                <div className='form'> 
-                <div>
-                    <Signup />
-                
-                <Moreselect2 />
-                </div>
-                </div>
-            </div>
+    <div className="w-full h-screen flex flex-row items-start ">
+      <div className="w-1/2 h-full">
+        <img src={circle} className="h-full rotate-180 "/>
+      </div>
+      <div className="w-1/2 order-1 h-full flex flex-row">
+        <div className="flex flex-col items-start gap-6 w-[32.25rem] h-[32.25rem] left-[13.188rem] top-[14] m-auto ">
+          <Logo />
+          <Signup/>
         </div>
+        <div className="w-[288rem] h-[28rem]">
+          <img
+            src={Logotop}
+            alt="Logotop"
+            className="absolute w-[28rem] h-[28rem] left-[63rem] top-[-15rem]"
+          />
+        </div>
+      </div>
+      
     </div>
-  )
-}
+  );
+};
 
-export default register
+export default Register;

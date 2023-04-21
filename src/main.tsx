@@ -6,7 +6,8 @@ import { useState } from 'react'
 import React from 'react'
 import Register from './pages/register'
 import Forgetpassword from './pages/forgetpassword'
-
+import Email from './pages/email'
+import LockScreen from './pages/lockscreen'
 
 const AppRender = (): JSX.Element => {
   const [isAuthentication, setIsAuthentication] = useState(localStorage.getItem('isAuthentication') === 'true')
@@ -25,6 +26,14 @@ const AppRender = (): JSX.Element => {
     {
       path: '/forgetpassword',
       element: <Forgetpassword/>
+    },
+    {
+      path: '/email',
+      element: <Email/>
+    },
+    {
+      path: '/lockscreen',
+      element: <LockScreen/>
     },
   ])
 
